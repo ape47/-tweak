@@ -1,0 +1,10 @@
+## Interface: 50400
+## Title: !|cFF00619Etweak|r
+## Notes: collection of tweaks
+## Author: ape47@WoWInterface
+## Author-zhTW: 斬擊@銀翼TW
+## Author-zhCN: 斩击@银翼TW
+## DefaultState: Enabled
+
+core.lua
+embed.xml
