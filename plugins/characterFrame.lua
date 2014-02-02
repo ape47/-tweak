@@ -108,7 +108,9 @@ for _, v in pairs(slot) do
 end
 InspectFrame:HookScript('OnEvent', function(self, event)
 	if not self:IsShown() then return end
-	CheckInventoryItem(InspectFrame.unit, 'Inspect')
+	if event == 'INSPECT_READY' then
+		CheckInventoryItem(InspectFrame.unit, 'Inspect')
+	end
 end)
 InspectFrame:HookScript('OnHide', function()
 	for _, v in pairs(slot) do

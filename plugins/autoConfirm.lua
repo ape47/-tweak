@@ -1,3 +1,4 @@
+-- 確認丟垃圾
 local trash = {
 	['5956']  = true,	-- 鐵匠之錘
 	['17056'] = true,	-- 輕羽毛
@@ -31,7 +32,7 @@ OnEvent('DELETE_ITEM_CONFIRM', function(self, event, ...)
 end)
 
 
-
+-- 確認roll裝、拾取
 StaticPopupDialogs['LOOT_BIND'] = nil
 StaticPopupDialogs['CONFIRM_LOOT_ROLL'] = nil
 
@@ -53,22 +54,15 @@ OnEvent('START_LOOT_ROLL', function(self, event, ...)
 	end
 end)
 
-OnEvent('ROLE_POLL_BEGIN', function()
+
+-- 進組選擇角色類型
+-- 'ROLE_POLL_BEGIN' 'GROUP_ROSTER_UPDATE' StaticPopupSpecial_Hide(RolePollPopup)
+OnEvent('GROUP_JOINED', function()
 	UnitSetRole('player', GetSpecializationRole(GetSpecialization()))
-	StaticPopupSpecial_Hide(RolePollPopup)
 end)
 
 
-
-local GetSpellInfo, SetMacroSpell = GetSpellInfo, SetMacroSpell
-OnEvent('SPELLS_CHANGED', function()
-	local spell = GetSpellInfo('神聖稜石') or GetSpellInfo('聖光之錘') or GetSpellInfo('死刑宣判')
-	if not spell then return end
-	SetMacroSpell('Talent6', spell)
-end)
-
-
-
+-- 被復活/thx
 local who = nil
 OnEvent['RESURRECT_REQUEST'] = function(self, event, ...)
 	who = ...
@@ -96,3 +90,17 @@ end
 
 OnEvent['PLAYER_UNGHOST'] = thx
 OnEvent['PLAYER_ALIVE'] = thx
+
+
+-- 巨集
+
+OnEvent('SPELLS_CHANGED', function()
+	local spell = GetSpellInfo('神聖稜石') or GetSpellInfo('聖光之錘') or GetSpellInfo('死刑宣判')
+	if not spell then return end
+	SetMacroSpell('Talent6', spell)
+end)
+
+OnEvent('BAG_UPDATE', function()
+	SetMacroItem('爐石', IsUsableItem('旅店老闆的女兒') and '旅店老闆的女兒' or IsUsableItem('爐石') and '爐石')
+	SetMacroItem('hp', IsUsableItem('聯盟戰旗') and '聯盟戰旗' or '治療石')
+end)
