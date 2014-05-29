@@ -12,7 +12,8 @@ local levelAdjust={
 	['468']=0,['470']=8,['471']=12,['472']=16,
 	['476']=0,['479']=0,
 	['491']=0,['492']=4,['493']=8,
-	['494']=0,['495']=4,['496']=8,['497']=12,['498']=16
+	['494']=0,['495']=4,['496']=8,['497']=12,['498']=16,
+	['504']=12,['505']=16,['506']=20,['507']=24,
 }
 
 local slot = {'Head','Neck','Shoulder','Shirt','Chest','Waist','Legs','Feet','Wrist','Hands','Finger0','Finger1','Trinket0','Trinket1','Back','MainHand','SecondaryHand','Tabard'}
@@ -77,7 +78,7 @@ local function CheckInventoryItem(unit, frame)
 				end
 			end
 		end
-		_G[frame..'ModelFrame'].ilv:SetFormattedText('%s/%s=%.1f\nupgrade:%s', total, count, total/count, floor(total/count+1)*count-total)
+		_G[frame..'ModelFrame'].ilv:SetFormattedText('%s/%s=%.2f\nupgrade:%s', total, count, total/count, floor(total/count+1)*count-total)
 	end
 end
 
