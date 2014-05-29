@@ -55,12 +55,13 @@ OnEvent('START_LOOT_ROLL', function(self, event, ...)
 end)
 
 
--- 進組選擇角色類型
--- 'ROLE_POLL_BEGIN' 'GROUP_ROSTER_UPDATE' StaticPopupSpecial_Hide(RolePollPopup)
-OnEvent('GROUP_JOINED', function()
+-- 選擇角色類型
+local function SelectRole()
+	StaticPopupSpecial_Hide(RolePollPopup)
 	UnitSetRole('player', GetSpecializationRole(GetSpecialization()))
-end)
-
+end
+OnEvent('GROUP_JOINED', SelectRole)
+OnEvent('ROLE_POLL_BEGIN', SelectRole)
 
 -- 被復活/thx
 local who = nil
@@ -101,6 +102,6 @@ OnEvent('SPELLS_CHANGED', function()
 end)
 
 OnEvent('BAG_UPDATE', function()
-	SetMacroItem('爐石', IsUsableItem('旅店老闆的女兒') and '旅店老闆的女兒' or IsUsableItem('爐石') and '爐石')
+	SetMacroItem('爐石', IsUsableItem('旅店老闆的女兒') and '旅店老闆的女兒' or '爐石')
 	SetMacroItem('hp', IsUsableItem('聯盟戰旗') and '聯盟戰旗' or '治療石')
 end)
