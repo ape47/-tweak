@@ -1,5 +1,5 @@
-UIErrorsFrame:UnregisterEvent('UI_ERROR_MESSAGE')
-UIErrorsFrame:Hide()
+--UIErrorsFrame:UnregisterEvent('UI_ERROR_MESSAGE')
+--UIErrorsFrame:Hide()
 
 -- AH搜尋
 SlashCmdList["AH"] = function()

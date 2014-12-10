@@ -2,13 +2,13 @@
 local function OnEvent()
 	if UnitAffectingCombat('player') then return end
 	local instance, instanceType = IsInInstance()
-	if instance then
-		WatchFrame.userCollapsed = true
-		WatchFrame_Collapse(WatchFrame)
+	--[[if instance then
+		ObjectiveTrackerFrame.userCollapsed = true
+		ObjectiveTrackerFrame_Collapse(ObjectiveTrackerFrame)
 	else
-		WatchFrame.userCollapsed = nil
-		WatchFrame_Expand(WatchFrame)
-	end
+		ObjectiveTrackerFrame.userCollapsed = nil
+		ObjectiveTrackerFrame_Expand(ObjectiveTrackerFrame)
+	end]]--
 	if instanceType == "arena" or instanceType == "pvp" then
 		SetBinding("TAB","TARGETNEARESTENEMYPLAYER")
 	else

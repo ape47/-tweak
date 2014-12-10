@@ -5,8 +5,8 @@ local function OnEvent(self, event)
 		SetCVar('timingMethod',			0)    -- 0 auto
 		SetCVar('processAffinityMask',	0)	-- 0 = auto
 		SetCVar('checkAddonVersion',		0)
-		SetCVar('M2Faster',			3)
-		SetCVar('UIFaster',			3)
+		--SetCVar('M2Faster',			3)
+		--SetCVar('UIFaster',			3)
 
 	-- Graphics
 		SetCVar('gxApi',				'GLL')
@@ -25,11 +25,11 @@ local function OnEvent(self, event)
 		SetCVar('MaxFPS',				60)
 		SetCVar('MaxFPSBK',			30)
 	--	SetCVar('farclip',			1600)	-- 視野距離 0-1600
-		SetCVar('ffx',				1)
+	--	SetCVar('ffx',				1)
 		SetCVar('ffxGlow',			1)
-		SetCVar('ffxDeath',			1)
-		SetCVar('ffxSpecial',			1)
-		SetCVar('ffxNetherWorld',		1)
+	--	SetCVar('ffxDeath',			1)
+	-- 	SetCVar('ffxSpecial',			1)
+	--	SetCVar('ffxNetherWorld',		1)
 		SetCVar('ffxRectangle',			1)
 	--	SetCVar('particleDensity',		100)
 	--	SetCVar('reflectionMode',		0)
@@ -87,10 +87,10 @@ local function OnEvent(self, event)
 		SetCVar('mouseSpeed',			1)
 		SetCVar('lootUnderMouse',		1)
 		SetCVar('UberTooltips',			1)
-		SetCVar('bgLoadThrottle',		0)	-- Set the maximum percentage of available bandwidth for background streaming
+	--	SetCVar('bgLoadThrottle',		0)	-- Set the maximum percentage of available bandwidth for background streaming
 		SetCVar('taintLog',			0)
 		SetCVar('scriptErrors',			0)
-		SetCVar('combatLogOn',			0)
+	--	SetCVar('combatLogOn',			0)
 
 
 	self:UnregisterEvent(event)

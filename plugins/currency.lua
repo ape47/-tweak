@@ -1,4 +1,4 @@
-local token = {390,392,396,395,402,752,776}
+local token = {824,823,390,392,396,395,994}
 local GetCurrencyInfo, select, tip = GetCurrencyInfo, select, GameTooltip
 
 local function OnEvent(self)
@@ -21,7 +21,7 @@ end
 for i = 1, #token do
 	local id = token[i]
 	local t = CreateFrame('Frame', nil, Minimap)
-		t:SetPoint('TOPRIGHT', Minimap, 'BOTTOMRIGHT', 0, -20*(i-1)-32)
+		t:SetPoint('TOPRIGHT', Minimap, 'BOTTOMRIGHT', 0, -20*(i-1)-56)
 		t:SetSize(12, 12)
 		t.texture = t:CreateTexture(nil, 'ARTWORK')
 		t.texture:SetAllPoints(t)
@@ -44,10 +44,10 @@ for i = 1, #token do
 end
 
 
-WatchFrame:SetClampedToScreen(true)
-WatchFrame:SetHeight(500)
-WatchFrame:SetScale(.8)
-WatchFrame:ClearAllPoints() 
-WatchFrame.ClearAllPoints = function() end
-WatchFrame:SetPoint('TOPRIGHT', tokens[1], 'TOPRIGHT', -100, 0)
-WatchFrame.SetPoint = function() end
+ObjectiveTrackerFrame:SetClampedToScreen(true)
+ObjectiveTrackerFrame:SetHeight(500)
+ObjectiveTrackerFrame:SetScale(.8)
+ObjectiveTrackerFrame:ClearAllPoints() 
+ObjectiveTrackerFrame.ClearAllPoints = function() end
+ObjectiveTrackerFrame:SetPoint('TOPRIGHT', tokens[1], 'TOPRIGHT', -100, 0)
+ObjectiveTrackerFrame.SetPoint = function() end
